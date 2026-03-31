@@ -142,9 +142,9 @@ SPEAKER OUTPUT (8Ω)
 > ⚠️ **TBD** — Architecture, topology, and specifications to be defined.
 
 Open questions:
-- Output power target 70 watts
-- Speaker impedance 8Ω
-- Topology — Class D preferred (TPA3251 candidate)
+- Output power target (watts)?
+- Speaker impedance (4Ω, 8Ω)?
+- Topology — Class D preferred (TPA3251 candidate), Class AB alternative
 - Supply rail requirement (32V from Module D assumed)
 
 ---
@@ -216,7 +216,7 @@ Targets to establish:
 | 2026-03-31 | Gain trim + send assign switch per channel | Cleaner than 3 knobs per channel; send master handles output level per bus | 3 knobs per channel (level + send1 + send2) — rejected |
 | 2026-03-31 | Send master level per send bus | Controls overall effect send output level cleanly; trim sets relative channel contribution | Per-channel send level knobs — more complex, unnecessary |
 | 2026-03-31 | Nu capsules as inputs — PCB header connection | Cycfi Nu capsules connect via 2mm headers directly to PCB; no input jacks needed on panel | Panel-mounted jacks — unnecessary given capsule connector type |
-| 2026-03-31 | External 32V brick, Module D distributes only | Simplifies design, leverages reliable off-the-shelf SMPS | Internal SMPS — unnecessary complexity |
+| 2026-03-31 | C&K OS103011MS8QP1 SP3T slide switch for send assign | Through-hole for ruggedness, small footprint, ON-ON-ON covers all 3 states, KiCad footprint available | Toggle switch — larger footprint; rotary — unnecessary complexity |
 
 ---
 

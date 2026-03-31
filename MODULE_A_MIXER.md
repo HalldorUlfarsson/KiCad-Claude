@@ -98,7 +98,7 @@ Passive summing is explicitly not used. Cycfi Research advise against passive mi
 | Inputs | 8 × Nu capsule | Via 2mm pitch PCB header |
 | Input signal level | ~200–260mVrms | Nu capsule output |
 | Input impedance | TBD | Must suit 10kΩ Nu output impedance |
-| Per-channel controls | 1 × gain trim knob + 1 × 3-position switch | Level trim and send assignment |
+| Per-channel controls | 1 × gain trim knob + 1 × SP3T slide switch | Level trim and send assignment |
 | Send master controls | 2 × potentiometer | Send 1 Master, Send 2 Master — one per send bus |
 | Total panel controls | 18 | 8 trims + 8 switches + 2 send masters |
 | Main mix output | 1 × line level (~1Vrms) | All channels summed — to Module B |
@@ -111,13 +111,46 @@ Passive summing is explicitly not used. Cycfi Research advise against passive mi
 
 ---
 
+## Send Assign Switch — Selected Component
+
+**C&K OS103011MS8QP1** — SP3T, ON-ON-ON, through-hole vertical, PC pin
+
+| Parameter | Value |
+|---|---|
+| Manufacturer | C&K (Littelfuse) |
+| Part number | OS103011MS8QP1 |
+| Configuration | SP3T — Single Pole, 3 Throw |
+| Switch function | ON-ON-ON — all 3 positions are active |
+| Positions | 1: Send 1 only / 2: Send 1+2 / 3: Send 2 only |
+| Mounting | Through-hole vertical — top actuated through slot in panel | ✅ Confirmed |
+| Pin pitch | 2mm |
+| Travel | 2mm per position |
+| Current rating | 100mA at 12VDC — well within audio signal levels |
+| Body size | 8.2mm × 7.5mm |
+| KiCad footprint | Available via SnapMagic / KiCad library |
+| Digikey | OS103011MS8QP1-ND |
+| Approximate unit cost | ~$0.50–$0.83 |
+
+**Switch position logic:**
+
+| Position | Connects | Result |
+|---|---|---|
+| 1 | Pole → Throw 1 | Send 1 only |
+| 2 | Pole → Throw 2 | Send 1 + 2 (centre position — pole feeds a junction) |
+| 3 | Pole → Throw 3 | Send 2 only |
+
+> ⚠️ The "Both" (Send 1+2) position requires the centre throw to connect to both send buses. This needs to be handled in the PCB routing — the centre pin connects to a node that feeds into both summing amp inputs. Confirm wiring during schematic phase.
+
+**Orientation confirmed:** Vertical (OS103011MS8QP1) — switch actuator protrudes upward through a slot in the panel. The right-angle variant (OS103011MA7QP1) is not used.
+
+---
+
 ## Open Questions
 
 - [ ] Op-amp selection — NE5532 or TL072 for summing amps?
 - [ ] Exact gain setting — confirm target output level at main out
 - [ ] Nu capsule supply voltage — 9V or 12V?
-- [ ] Send assign switch type — mechanical 3-position toggle, slide switch, or rotary?
-- [ ] Does gain trim also control level in main mix, or is main mix always at unity from the trim?
+- [ ] Does gain trim control level in both main mix and send buses, or main mix only?
 - [ ] Output connector types — main out and effect sends
 - [ ] Master level control on main output — include or omit?
 - [ ] Any clip / level indication per channel or master?
