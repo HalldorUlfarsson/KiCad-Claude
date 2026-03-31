@@ -142,7 +142,7 @@ SPEAKER OUTPUT (8Ω)
 > ⚠️ **TBD** — Architecture, topology, and specifications to be defined.
 
 Open questions:
-- Output power target (watts)?
+- Output power target 70 watts
 - Speaker impedance 8Ω
 - Topology — Class D preferred (TPA3251 candidate)
 - Supply rail requirement (32V from Module D assumed)
