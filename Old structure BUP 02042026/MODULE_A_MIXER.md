@@ -1,16 +1,16 @@
 # Module A — 8-Input Mixer
 **Project:** KiCad-Claude Audio Amplifier  
 **Revision:** 0.2  
-**Last Updated:** 2026-03-31  
+**Last Updated:** 2026-04-02  
 **Status:** Architecture defined — schematic not yet started
 
 ---
 
 ## Overview
 
-The mixer accepts 8 signals from Nu modular single-string pickups (Cycfi Research), combines them into a main mix output (to Module B), and independently routes each channel to two effect send buses. Each channel has three level controls: main mix level, Effect Send 1 level, and Effect Send 2 level. The mixer uses active summing throughout — passive mixing is not suitable for 8 inputs at these signal levels.
+The mixer accepts 8 signals from Nu modular single-string pickups (Cycfi Research), combines them into a main mix output (to Module B), and independently routes each channel to two effect send buses. Each channel has a gain trim knob and a 3-position send assign switch (Send 1 / Send 2 / Both). The two effect send buses each have a master level knob. The mixer uses active summing throughout — passive mixing is not suitable for 8 inputs at these signal levels.
 
-This is the most mechanically complex module, with 24 potentiometers on the front panel.
+This is the most mechanically complex module, with 18 controls on the front panel: 8 gain trim knobs, 8 send assign switches, and 2 send master knobs.
 
 ---
 
@@ -160,11 +160,11 @@ Passive summing is explicitly not used. Cycfi Research advise against passive mi
 
 ## Physical Notes
 
-Per-channel panel layout: 8 columns, each with a **gain trim knob** and a **3-position send assign switch**. Plus two **send master knobs** (one per send bus), likely grouped together at one end of the panel.
+Per-channel panel layout: 8 columns, each with a **gain trim knob** and a **C&K OS103011MS8QP1 SP3T slide switch** (top-actuated through a slot in the panel). The two **send master knobs** are grouped together at one end of the panel.
 
 The Nu capsules connect directly to PCB headers — no input jacks on the front panel. The panel carries only the controls and output connectors, keeping it clean and uncluttered.
 
-The 3-position switch per channel is a key mechanical decision — options include a small toggle switch (ON-OFF-ON or ON-ON-ON), a slide switch, or a small rotary. Toggle switches are robust and intuitive; slide switches are compact. This needs to be confirmed before PCB layout as it affects panel drilling and PCB footprint.
+The slide switch actuator protrudes upward through a panel slot — the PCB sits behind the panel with the switch body mounted vertically. Panel slot dimensions must match the OS103011MS8QP1 actuator profile; confirm from datasheet before panel fabrication.
 
 ---
 

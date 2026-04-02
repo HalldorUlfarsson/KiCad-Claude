@@ -1,1 +1,0 @@
-# Audio Amplifier System — System Specification
